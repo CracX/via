@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+
+{% block title %}Choose an option{% endblock %}
+
+{% block body %}
+<div class="wrapper">
+    <div id="index-options">
+        <h1>What would you like to do?</h1>
+        <div class="flex-row">
+            <a class="i-option" href="/submit">Submit a ticket</a>
+            <a class="i-option" href="/check">Check ticket status</a>
+            <a class="i-option" href="/login">Login as administrator</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
