@@ -32,3 +32,24 @@ body, html, .wrapper{
     color: black;
     font-size: 25px;
 }
+
+#login-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    button{
+        width: 100%;
+        cursor: pointer;
+    }
+}
+
+#login-box form{
+    text-align: left;
+}
+
+.error{
+    color: red;
+    text-align: center;
+}
