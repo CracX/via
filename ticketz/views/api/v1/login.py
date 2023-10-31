@@ -8,7 +8,7 @@ view_api_login = Blueprint('view_api_login', __name__)
 def api_login():
     if not request.form.get('username') or not request.form.get('password'):
         flash('Username and password are required')
-        return redirect('/login')
+        return redirect('/login?error=1')
     
     username = request.form.get('username')
     password = request.form.get('password')
@@ -16,13 +16,13 @@ def api_login():
     admin = Admin.query.filter_by(username=username).first()
     if not admin:
         flash('Invalid username or password')
-        return redirect('/login')
+        return redirect('/login?error=1')
     
     try:
         PasswordHasher().verify(admin.password_hash, password)
     except:
         flash('Invalid username or password')
-        return redirect('/login')
+        return redirect('/login?error=1')
     session['id'] = admin.id
     session['username'] = admin.username
     return redirect('/panel')
