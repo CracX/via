@@ -6,16 +6,27 @@
 <div class="wrapper">
     <div id="login-box">
         <h1>Log in</h1>
-        <form action="" method="POST">
+        <form action="/api/v1/login" method="POST">
             <div class="input-group">
                 <label for="username">Username</label>
-                <input type="text" name="username" id="username" placeholder="Username">
+                <br>
+                <input type="text" name="username" id="username" placeholder="Username" required>
             </div>
             <div class="input-group">
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password" placeholder="Password">
+                <br>
+                <input type="password" name="password" id="password" placeholder="Password" required>
             </div>
             <button type="submit">Log in</button>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="error">
+                {% for message in messages %}
+                <p>{{ message }}</p>
+                {% endfor %}
+                </div>
+            {% endif %}
+            {% endwith %}
         </form>
     </div>
 </div>
