@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+
+{% block title %}Log in{% endblock %}
+
+{% block body %}
+<div class="wrapper">
+    <div id="login-box">
+        <h1>Log in</h1>
+        <form action="" method="POST">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" placeholder="Username">
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Password">
+            </div>
+            <button type="submit">Log in</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
