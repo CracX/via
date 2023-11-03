@@ -1,19 +1,16 @@
 {% extends 'main.html' %}
 
-{% block title %}Submit a ticket{% endblock %}
+{% block title %}Check ticket status{% endblock %}
 
 {% block body %}
 <div class="wrapper">
     <div id="login-box">
-        <h1>Submit a ticket</h1>
-        <form action="/api/v1/create_ticket" method="POST">
-            <label for="">Device ID</label>
+        <h1>Check ticket status</h1>
+        <form action="/check" method="GET">
+            <label for="">Ticket ID</label>
             <br>
             <input type="text" name="code" id="">
-            <br>
-            <label for="">Problem</label>
-            <textarea name="description" id="" cols="30" rows="10"></textarea>
-            <button>Submit</button>
+            <button>Check status</button>
             {% with messages = get_flashed_messages() %}
             {% if messages %}
                 <div class="error">
@@ -24,6 +21,9 @@
             {% endif %}
             {% endwith %}
         </form>
+        {% if ticket_status %}
+        <h1>Your ticket status is: {{ticket_status}}</h1>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

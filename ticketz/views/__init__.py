@@ -3,6 +3,7 @@ from ticketz.views.ui.login import view_ui_login
 from ticketz.views.ui.panel import view_ui_panel
 from ticketz.views.ui.tickets import view_ui_tickets
 from ticketz.views.ui.ticket_submit import view_ui_ticket_submit
+from ticketz.views.ui.ticket_check import view_ui_ticket_check
 from ticketz.views.api.v1.login import view_api_login
 from ticketz.views.api.v1.logout import view_api_logout
 from ticketz.views.api.v1.register import view_api_register
@@ -17,6 +18,7 @@ def build_views(app):
     app.register_blueprint(view_ui_panel, url_prefix='/panel')
     app.register_blueprint(view_ui_tickets, url_prefix='/panel/tickets')
     app.register_blueprint(view_ui_ticket_submit, url_prefix='/submit')
+    app.register_blueprint(view_ui_ticket_check, url_prefix='/check')
     app.register_blueprint(view_api_login, url_prefix='/api/v1')
     app.register_blueprint(view_api_register, url_prefix='/api/v1')
     app.register_blueprint(view_api_ticket_create, url_prefix='/api/v1')
