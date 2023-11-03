@@ -24,6 +24,7 @@ def api_login():
         flash('Invalid username or password')
         return redirect('/login?error=1')
     session['id'] = admin.id
+    print(session['id'])
     session['username'] = admin.username
     return redirect('/panel')
 

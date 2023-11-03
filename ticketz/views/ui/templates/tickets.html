@@ -1,0 +1,49 @@
+{% extends 'main.html' %}
+
+{% block title %}Panel{% endblock %}
+
+{% block body %}
+{% include 'top-nav.html' %}
+
+<div class="wrapper">
+    <div id="panel-tickets">
+        <h1>Open Tickets</h1>
+        <div class="pt-tickets">
+            {% for ticket in all_tickets %}
+                {% if ticket.status == 0 %}
+                <div class="pt-ticket">
+                <p>Device: {{ticket.device.code}}</p>
+                <p>Problem: {{ticket.problem}}</p>
+                <a href="/api/v1/ticket_status?status=1">Move to "In-Progress"</a>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <h1>In-Progress Tickets</h1>
+        <div class="pt-tickets">
+            {% for ticket in all_tickets %}
+                {% if ticket.status == 1 %}
+                <div class="pt-ticket">
+                <p>Device: {{ticket.device.code}}</p>
+                <p>Problem: {{ticket.problem}}</p>
+                <a href="/api/v1/ticket_status?status=2">Move to "Closed"</a>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <h1>Closed Tickets</h1>
+        <div class="pt-tickets">
+            {% for ticket in all_tickets %}
+                {% if ticket.status == 2 %}
+                <div class="pt-ticket">
+                <p>Device: {{ticket.device.code}}</p>
+                <p>Problem: {{ticket.problem}}</p>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

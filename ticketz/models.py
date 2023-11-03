@@ -21,5 +21,5 @@ class Ticket(db.Model):
     device_id = db.Column(db.Integer, db.ForeignKey('device.id'))
     code = db.Column(db.String(80), unique=True, nullable=False)
     status = db.Column(db.Enum(TicketStatus), nullable=False, default=TicketStatus.OPEN)
-
+    problem = db.Column(db.String(80), nullable=False)
     device = db.relationship('Device', backref=db.backref('tickets', lazy='dynamic'))

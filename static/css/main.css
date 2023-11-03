@@ -39,6 +39,12 @@ body, html, .wrapper {
   align-items: center;
   flex-direction: column;
 }
+#login-box form {
+  width: 300px;
+}
+#login-box input {
+  width: 100%;
+}
 #login-box button {
   width: 100%;
   cursor: pointer;
@@ -51,4 +57,44 @@ body, html, .wrapper {
 .error {
   color: red;
   text-align: center;
+}
+
+#top-nav {
+  width: 100%;
+  background-color: cadetblue;
+}
+#top-nav a {
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+#panel-home {
+  text-align: center;
+}
+
+#panel-tickets .pt-tickets {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.pt-ticket {
+  width: 300px;
+  height: 300px;
+  border-radius: 15px;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.pt-ticket a {
+  text-decoration: none;
+  color: white;
+  padding: 5px;
+  font-size: 15px;
+  background-color: brown;
+  border-radius: 15px;
 }/*# sourceMappingURL=main.css.map */
