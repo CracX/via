@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+
+{% block title %}Submit a ticket{% endblock %}
+
+{% block body %}
+<div class="wrapper">
+    <div id="login-box">
+        <h1>Submit a ticket</h1>
+        <form action="/api/v1/create_ticket" method="POST">
+            <label for="">Device ID</label>
+            <br>
+            <input type="text" name="device_id" id="">
+            <br>
+            <label for="">Problem</label>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <button>Submit</button>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="error">
+                {% for message in messages %}
+                <p>{{ message }}</p>
+                {% endfor %}
+                </div>
+            {% endif %}
+            {% endwith %}
+        </form>
+    </div>
+</div>
+{% endblock %}

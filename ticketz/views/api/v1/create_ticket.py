@@ -5,7 +5,7 @@ import uuid
 
 view_api_ticket_create = Blueprint('view_api_ticket_create', __name__)
 
-@view_api_ticket_create.post('/register')
+@view_api_ticket_create.post('/create_ticket')
 def api_ticket_create():
     if not request.form.get('code') or not request.form.get('description'):
         flash('All fields are required')
